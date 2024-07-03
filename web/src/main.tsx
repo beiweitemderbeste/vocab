@@ -1,12 +1,12 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import MainMenu from "./components/MainMenu";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <MainMenu />,
   },
 ]);
 
