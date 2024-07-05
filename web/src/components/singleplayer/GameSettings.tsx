@@ -13,7 +13,7 @@ const GameSettings = () => {
   const [gameLength, setGameLength] = useState<number>(10);
 
   return (
-    <div className="mx-10 p-6 space-y-4 bg-purple-600 mt-10 rounded-lg shadow-lg">
+    <div className="p-6 space-y-4 bg-purple-600 mt-10 rounded-lg shadow-lg w-80 max-w-md">
       <GameSettingsHeading heading="game settings" />
       <LanguageSelection
         languagePair={languagePair}
