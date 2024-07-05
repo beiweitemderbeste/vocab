@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
-
 import TopBar from "./TopBar";
+import MainMenuLink from "./MainMenuLink";
 
 const MainMenu = () => {
   return (
     <>
       <TopBar />
-      <Link to="/singleplayer">Singleplayer</Link>
-      <Link to="/multiplayer">Multiplayer</Link>
+      <div className="pt-24 p-4 space-y-16">
+        <MainMenuLink route="/singleplayer" title="Singleplayer" />
+        <MainMenuLink route="/multiplayer" title="Multiplayer" />
+      </div>
     </>
   );
 };
