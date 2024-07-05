@@ -1,11 +1,11 @@
 import TopBar from "./TopBar";
-import SinglePlayerPreferences from "./SinglePlayerPreferences";
+import SinglePlayerGameSettings from "./SinglePlayerGameSettings";
 
 const SinglePlayer = () => {
   return (
     <div className="bg-purple-100 min-h-screen">
-      <TopBar heading="game selection" />
-      <SinglePlayerPreferences />
+      <TopBar heading="single player" />
+      <SinglePlayerGameSettings />
     </div>
   )
 };
