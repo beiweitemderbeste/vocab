@@ -6,8 +6,8 @@ const MainMenu = () => {
   return (
     <>
       <TopBar />
-      <button><Link to="/singleplayer">Singleplayer</Link></button>
-      <button><Link to="/multiplayer">Multiplayer</Link></button>
+      <Link to="/singleplayer">Singleplayer</Link>
+      <Link to="/multiplayer">Multiplayer</Link>
     </>
   );
 };
