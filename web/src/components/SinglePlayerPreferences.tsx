@@ -27,7 +27,7 @@ const SinglePlayerPreferences = () => {
   const handleGameLengthChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    setGameLength(event.target.value);
+    setGameLength(Number(event.target.value));
   };
 
   return (
@@ -91,9 +91,9 @@ const SinglePlayerPreferences = () => {
           onChange={handleGameLengthChange}
           className="px-2 py-1 border border-gray-300 rounded-md"
         >
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
+          <option value={10}>10</option>
+          <option value={20}>20</option>
+          <option value={30}>30</option>
         </select>
         <span className="ml-2">words</span>
       </div>
