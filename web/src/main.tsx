@@ -1,4 +1,7 @@
 import ReactDOM from "react-dom/client";
+
+import "./index.css";
+
 import MainMenu from "./components/MainMenu";
 import SinglePlayer from "./components/SinglePlayer";
 
