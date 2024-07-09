@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
-const StartGameButton = () => {
+const BackToMenuButton = () => {
   return (
     <Link
-      to="/spgame"
+      to="/"
       className="p-4 bg-purple-600 text-white text-xl font-bold shadow-lg rounded-lg hover:bg-purple-700 transition duration-300 cursor-pointer"
     >
-      start game
+      back to menu
     </Link>
   );
 };
 
-export default StartGameButton;
+export default BackToMenuButton;
