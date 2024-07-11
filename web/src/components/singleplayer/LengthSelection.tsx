@@ -7,6 +7,7 @@ const LengthSelection: React.FC<LengthSelectionProps> = ({
   gameLength,
   setGameLength,
 }) => {
+  
   const handleGameLengthChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
