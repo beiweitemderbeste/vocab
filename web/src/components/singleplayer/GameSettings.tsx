@@ -6,8 +6,10 @@ import RangeSelection from "./RangeSelection";
 import LengthSelection from "./LengthSelection";
 
 interface GameSettingsProps {
-  languagePair: string;
-  setLanguagePair: (value: string) => void;
+  sourceLanguage: string;
+  setSourceLanguage: (value: string) => void;
+  targetLanguage: string;
+  setTargetLanguage: (value: string) => void;
   difficultyLevel: string;
   setDifficultyLevel: (value: string) => void;
   wordCategory: string;
@@ -18,13 +20,15 @@ interface GameSettingsProps {
   setGameLength: (value: number) => void;
 }
 
-const GameSettings: React.FC<GameSettingsProps> = ({ languagePair, setLanguagePair, difficultyLevel, setDifficultyLevel, wordCategory, setWordCategory, wordRange, setWordRange, gameLength, setGameLength}) => {
+const GameSettings: React.FC<GameSettingsProps> = ({ sourceLanguage, setSourceLanguage, targetLanguage, setTargetLanguage, difficultyLevel, setDifficultyLevel, wordCategory, setWordCategory, wordRange, setWordRange, gameLength, setGameLength}) => {
   return (
     <div className="p-6 space-y-4 bg-purple-600 mt-10 rounded-lg shadow-lg w-80 max-w-md">
       <GameSettingsHeading heading="game settings" />
       <LanguageSelection
-        languagePair={languagePair}
-        setLanguagePair={setLanguagePair}
+        sourceLanguage={sourceLanguage}
+        setSourceLanguage={setSourceLanguage}
+        targetLanguage={targetLanguage}
+        setTargetLanguage={setTargetLanguage}
       />
       <DifficultySelection
         difficultyLevel={difficultyLevel}

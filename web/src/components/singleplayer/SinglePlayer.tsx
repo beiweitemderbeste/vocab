@@ -6,8 +6,10 @@ import StartGameButton from "./StartGameButton";
 import BackToMenuButton from "./BackToMenuButton";
 
 interface SinglePlayerProps {
-  languagePair: string;
-  setLanguagePair: (value: string) => void;
+  sourceLanguage: string;
+  setSourceLanguage: (value: string) => void;
+  targetLanguage: string;
+  setTargetLanguage: (value: string) => void;
   difficultyLevel: string;
   setDifficultyLevel: (value: string) => void;
   wordCategory: string;
@@ -19,19 +21,22 @@ interface SinglePlayerProps {
 }
 
 const SinglePlayer: React.FC<SinglePlayerProps> = () => {
-  const [languagePair, setLanguagePair] = useState<string>("english - german");
-  const [difficultyLevel, setDifficultyLevel] = useState<string>("easy");
-  const [wordCategory, setWordCategory] = useState<string>("adjectives");
-  const [wordRange, setWordRange] = useState<string>("a1");
-  const [gameLength, setGameLength] = useState<number>(10);
+  const [sourceLanguage, setSourceLanguage] = useState("english");
+  const [targetLanguage, setTargetLanguage] = useState("german");
+  const [difficultyLevel, setDifficultyLevel] = useState("easy");
+  const [wordCategory, setWordCategory] = useState("adjectives");
+  const [wordRange, setWordRange] = useState("a1");
+  const [gameLength, setGameLength] = useState(10);
 
   return (
     <div className="bg-purple-100 min-h-screen">
       <TopBar heading="single player" />
       <div className="flex flex-col items-center space-y-6">
         <GameSettings
-          languagePair={languagePair}
-          setLanguagePair={setLanguagePair}
+          sourceLanguage={sourceLanguage}
+          setSourceLanguage={setSourceLanguage}
+          targetLanguage={targetLanguage}
+          setTargetLanguage={setTargetLanguage}
           difficultyLevel={difficultyLevel}
           setDifficultyLevel={setDifficultyLevel}
           wordCategory={wordCategory}
@@ -44,7 +49,8 @@ const SinglePlayer: React.FC<SinglePlayerProps> = () => {
         <div className="flex space-x-4">
           <BackToMenuButton />
           <StartGameButton
-            languagePair={languagePair}
+            sourceLanguage={sourceLanguage}
+            targetLanguage={targetLanguage}
             difficultyLevel={difficultyLevel}
             wordCategory={wordCategory}
             wordRange={wordRange}

@@ -5,8 +5,10 @@ import { supabase } from "../../supabaseClient";
 
 const SinglePlayerGame = () => {
   const location = useLocation();
-  const { languagePair, difficultyLevel, wordCategory, wordRange, gameLength } =
+  const { sourceLanguage, targetLanguage, difficultyLevel, wordCategory, wordRange, gameLength } =
     location.state;
+
+  
 
   const [englishAdjectives, setEnglishAdjectives] = useState([]);
 
@@ -21,7 +23,8 @@ const SinglePlayerGame = () => {
 
   return (
     <>
-      <p>language pair: {languagePair}</p>
+      <p>source language: {sourceLanguage}</p>
+      <p>target language: {targetLanguage}</p>
       <p>difficulty level: {difficultyLevel}</p>
       <p>word category: {wordCategory}</p>
       <p>word range: {wordRange}</p>

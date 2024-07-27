@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
 interface StartGameButtonProps {
-  languagePair: string;
+  sourceLanguage: string;
+  targetLanguage: string;
   difficultyLevel: string;
   wordCategory: string;
   wordRange: string;
@@ -9,7 +10,8 @@ interface StartGameButtonProps {
 }
 
 const StartGameButton: React.FC<StartGameButtonProps> = ({
-  languagePair,
+  sourceLanguage,
+  targetLanguage,
   difficultyLevel,
   wordCategory,
   wordRange,
@@ -19,7 +21,8 @@ const StartGameButton: React.FC<StartGameButtonProps> = ({
   const handleClick = () => {
     navigate("/spgame", {
       state: {
-        languagePair,
+        sourceLanguage,
+        targetLanguage,
         difficultyLevel,
         wordCategory,
         wordRange,
