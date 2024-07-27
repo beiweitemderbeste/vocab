@@ -2,15 +2,10 @@ import { useNavigate } from "react-router-dom";
 
 interface StartGameButtonProps {
   languagePair: string;
-  setLanguagePair: (value: string) => void;
   difficultyLevel: string;
-  setDifficultyLevel: (value: string) => void;
   wordCategory: string;
-  setWordCategory: (value: string) => void;
   wordRange: string;
-  setWordRange: (value: string) => void;
   gameLength: number;
-  setGameLength: (value: number) => void;
 }
 
 const StartGameButton: React.FC<StartGameButtonProps> = ({

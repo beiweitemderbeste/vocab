@@ -45,15 +45,10 @@ const SinglePlayer: React.FC<SinglePlayerProps> = () => {
           <BackToMenuButton />
           <StartGameButton
             languagePair={languagePair}
-            setLanguagePair={setLanguagePair}
             difficultyLevel={difficultyLevel}
-            setDifficultyLevel={setDifficultyLevel}
             wordCategory={wordCategory}
-            setWordCategory={setWordCategory}
             wordRange={wordRange}
-            setWordRange={setWordRange}
             gameLength={gameLength}
-            setGameLength={setGameLength}
           />
         </div>
       </div>
