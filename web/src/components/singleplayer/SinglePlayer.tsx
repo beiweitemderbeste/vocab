@@ -10,12 +10,12 @@ interface SinglePlayerProps {
   setSourceLanguage: (value: string) => void;
   targetLanguage: string;
   setTargetLanguage: (value: string) => void;
-  difficultyLevel: string;
-  setDifficultyLevel: (value: string) => void;
+  gameDifficulty: string;
+  setGameDifficulty: (value: string) => void;
   wordCategory: string;
   setWordCategory: (value: string) => void;
-  wordRange: string;
-  setWordRange: (value: string) => void;
+  wordDifficulty: string;
+  setWordDifficulty: (value: string) => void;
   gameLength: number;
   setGameLength: (value: number) => void;
 }
@@ -23,9 +23,9 @@ interface SinglePlayerProps {
 const SinglePlayer: React.FC<SinglePlayerProps> = () => {
   const [sourceLanguage, setSourceLanguage] = useState("english");
   const [targetLanguage, setTargetLanguage] = useState("german");
-  const [difficultyLevel, setDifficultyLevel] = useState("easy");
+  const [gameDifficulty, setGameDifficulty] = useState("easy");
   const [wordCategory, setWordCategory] = useState("adjectives");
-  const [wordRange, setWordRange] = useState("a1");
+  const [wordDifficulty, setWordDifficulty] = useState("a1");
   const [gameLength, setGameLength] = useState(10);
 
   return (
@@ -37,12 +37,12 @@ const SinglePlayer: React.FC<SinglePlayerProps> = () => {
           setSourceLanguage={setSourceLanguage}
           targetLanguage={targetLanguage}
           setTargetLanguage={setTargetLanguage}
-          difficultyLevel={difficultyLevel}
-          setDifficultyLevel={setDifficultyLevel}
+          gameDifficulty={gameDifficulty}
+          setGameDifficulty={setGameDifficulty}
           wordCategory={wordCategory}
           setWordCategory={setWordCategory}
-          wordRange={wordRange}
-          setWordRange={setWordRange}
+          wordDifficulty={wordDifficulty}
+          setWordDifficulty={setWordDifficulty}
           gameLength={gameLength}
           setGameLength={setGameLength}
         />
@@ -51,9 +51,9 @@ const SinglePlayer: React.FC<SinglePlayerProps> = () => {
           <StartGameButton
             sourceLanguage={sourceLanguage}
             targetLanguage={targetLanguage}
-            difficultyLevel={difficultyLevel}
+            gameDifficulty={gameDifficulty}
             wordCategory={wordCategory}
-            wordRange={wordRange}
+            wordDifficulty={wordDifficulty}
             gameLength={gameLength}
           />
         </div>

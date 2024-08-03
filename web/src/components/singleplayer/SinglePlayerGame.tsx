@@ -1,37 +1,43 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import { supabase } from "../../supabaseClient";
+import { fetchWords } from "../../utils/dataFetching";
 
 const SinglePlayerGame = () => {
   const location = useLocation();
-  const { sourceLanguage, targetLanguage, difficultyLevel, wordCategory, wordRange, gameLength } =
+  const { sourceLanguage, targetLanguage, gameDifficulty, wordCategory, wordDifficulty, gameLength } =
     location.state;
 
-  
+  // default values:
+  // sourceLanguage english
+  // targetLanguage german
+  // difficultyLevel easy
+  // wordCategory adjectives
+  // wordRange a1
+  // gameLength 10
 
-  const [englishAdjectives, setEnglishAdjectives] = useState([]);
+  const [targetLanguageWords, setTargetLanguageWords] = useState([]);
 
   useEffect(() => {
-    getEnglishAdjectives();
-  }, []);
+    const fetchAndSetWords = async () => {
+      const words = await fetchWords(sourceLanguage, targetLanguage, wordCategory, wordDifficulty);
+      setTargetLanguageWords(words);
+    };
 
-  async function getEnglishAdjectives() {
-    const { data } = await supabase.from("english_adjectives").select();
-    setEnglishAdjectives(data);
-  }
+    fetchAndSetWords();
+  }, [sourceLanguage, targetLanguage, wordCategory, wordDifficulty]);
 
   return (
     <>
       <p>source language: {sourceLanguage}</p>
       <p>target language: {targetLanguage}</p>
-      <p>difficulty level: {difficultyLevel}</p>
+      <p>game difficulty: {gameDifficulty}</p>
       <p>word category: {wordCategory}</p>
-      <p>word range: {wordRange}</p>
+      <p>word difficulty: {wordDifficulty}</p>
       <p>game length: {gameLength}</p>
       <ul>
-        {englishAdjectives.map((adjective) => (
-          <li key={adjective.word}>{adjective.word}</li>
+        {targetLanguageWords.map((word) => (
+          <li key={word.word}>{word.word}</li>
         ))}
       </ul>
     </>

@@ -3,18 +3,18 @@ import { useNavigate } from "react-router-dom";
 interface StartGameButtonProps {
   sourceLanguage: string;
   targetLanguage: string;
-  difficultyLevel: string;
+  gameDifficulty: string;
   wordCategory: string;
-  wordRange: string;
+  wordDifficulty: string;
   gameLength: number;
 }
 
 const StartGameButton: React.FC<StartGameButtonProps> = ({
   sourceLanguage,
   targetLanguage,
-  difficultyLevel,
+  gameDifficulty,
   wordCategory,
-  wordRange,
+  wordDifficulty,
   gameLength,
 }) => {
   const navigate = useNavigate();
@@ -23,9 +23,9 @@ const StartGameButton: React.FC<StartGameButtonProps> = ({
       state: {
         sourceLanguage,
         targetLanguage,
-        difficultyLevel,
+        gameDifficulty,
         wordCategory,
-        wordRange,
+        wordDifficulty,
         gameLength,
       },
     });
